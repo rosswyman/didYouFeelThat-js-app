@@ -75,18 +75,10 @@ let quakeRepository=(function(){
 
                 let quakeImage=document.createElement('img');
                 quakeImage.src=quake.imgURL;
-                $('#body-modal').append(quakeImage);
+                $('#body-modal').append(quakeImage);       
 
-                console.log(typeof(quakeDetails));
-                console.log(quakeDetails);
-                
-
-                $('#myModal').find('.modal-title').text(quake.name);
-                // $('#myModal').find('.modal-body').text(quake);
-                
-                $('#myModal').modal()
-
-                // showDialog(quake.name,'Quake Details',quake);               
+                $('#myModal').find('.modal-title').text(quake.name);      
+                $('#myModal').modal();               
             });            
         });
     }
@@ -147,131 +139,6 @@ let quakeRepository=(function(){
     function hideLoadingMessage(){
         console.clear();
     }
-
-//     let modalContainer = document.querySelector('#modal-container');
-
-//     function showModal(title, text) {
-//         // Clear all existing modal content
-//         modalContainer.innerHTML = '';
-
-//         let modal = document.createElement('div');
-//         modal.classList.add('modal');
-    
-//         // Add close button and listener to modal
-//         let closeButtonElement = document.createElement('button');
-//         closeButtonElement.classList.add('modal-close');
-//         closeButtonElement.innerText = 'Close';
-//         closeButtonElement.addEventListener('click', hideModal);
-
-//         // Modal Title
-//         let titleElement = document.createElement('h1');
-//         titleElement.innerText = title;
-
-//         // Modal Text
-//         let contentElement = document.createElement('p');
-//         contentElement.innerText = text;    
-        
-//         modal.appendChild(closeButtonElement);
-//         modal.appendChild(titleElement);
-//         modal.appendChild(contentElement);
-
-//         modalContainer.appendChild(modal);
-
-//         modalContainer.classList.add('is-visible');
-//   }
-
-//   let dialogPromiseReject;
-
-//   function hideModal(){   
-//     let modalContainer=document.querySelector('#modal-container');
-//     modalContainer.classList.remove('is-visible');
-
-//     if (dialogPromiseReject){
-//       dialogPromiseReject();
-//       dialogPromiseReject=null;
-//     }
-//   }
-
-//   function showDialog(title,text,quake){
-//     showModal(title, text);
-//     // $('#myModal').modal()
-      
-//     let modalContainer=document.querySelector('#modal-container');
-//     let modal = modalContainer.querySelector('.modal');
-
-//     // Create a confirm button
-//     let confirmButton = document.createElement('button');
-//     confirmButton.classList.add('modal-confirm');
-//     confirmButton.innerText = 'Confirm';
-
-//     // Create a cancel button
-//     let cancelButton = document.createElement('button');
-//     cancelButton.classList.add('modal-cancel');
-//     cancelButton.innerText = 'Cancel';
-
-//     // Create an unordered list with details
-//     let quakeDetails=document.createElement('ul');
-//     quakeDetails.classList.add('quake-list');
-
-//     // Create list items of quake details and all to parent list
-//     let quakeDetailURL=document.createElement('li');
-//     quakeDetailURL.innerText='Event URL: '+quake.nonJsonUrl;
-//     quakeDetails.appendChild(quakeDetailURL);
-
-//     let quakeDetailMagnitude=document.createElement('li');
-//     quakeDetailMagnitude.innerText='Magnitude: '+quake.magnitude;
-//     quakeDetails.appendChild(quakeDetailMagnitude);
-
-//     let quakeDetailLatitude=document.createElement('li');
-//     quakeDetailLatitude.innerText='Latitude: '+quake.latitude;
-//     quakeDetails.appendChild(quakeDetailLatitude);
-
-//     let quakeDetailLongitude=document.createElement('li');
-//     quakeDetailLongitude.innerText='Longitude: '+quake.longitude;
-//     quakeDetails.appendChild(quakeDetailLongitude);
-
-//     let quakeDetailDepth=document.createElement('li');
-//     quakeDetailDepth.innerText='Depth (km): '+quake.depth;
-//     quakeDetails.appendChild(quakeDetailDepth);
-
-//     let quakeImage=document.createElement('img');
-//     quakeImage.src=quake.imgURL;
- 
-//     modal.appendChild(quakeImage);
-//     modal.appendChild(quakeDetails);
-//     modal.appendChild(confirmButton);
-//     modal.appendChild(cancelButton);
-
-//     confirmButton.focus;
-
-//     return new Promise((resolve,reject) => {
-//       cancelButton.addEventListener('click', hideModal);
-//       confirmButton.addEventListener('click', () => {
-//         dialogPromiseReject=null;
-//         hideModal();
-//         resolve();
-//       });
-//       dialogPromiseReject=reject;
-//     });
-//   }
-
-//   // Listens for escape key to exit modal/dialogue
-//     window.addEventListener('keydown', (e) =>{
-//         let modalContainer = document.querySelector('#modal-container');
-//         if(e.key==='Escape' && modalContainer.classList.contains('is-visible')){
-//             hideModal();
-//         }
-//     });
-
-//     // Listens for click outside modal/dialog to exit
-//     modalContainer.addEventListener('click', (e) => {
-//         // Since this is also triggered when clicking INSIDE the modal
-//         // We only want to close if the user clicks directly on the overlay
-//         let target = e.target;
-//         if(target=== modalContainer){
-//             hideModal();
-//         }
-//     })
 
     return{
         add: add,
