@@ -24,14 +24,15 @@ let quakeRepository=(function(){
 
     // creates an unordered list of earthquakes that the user can click on for details
     function addListItem(quake){
-        let quakeList=document.querySelector('.quake-list');
+      
+        let quakeList=document.querySelector('.list-group');
         let listQuake=document.createElement('li');
         let button=document.createElement('button')
         button.innerText=quake.name;
-        button.classList.add('button-class');
         listQuake.appendChild(button);
         quakeList.appendChild(listQuake);
-         
+        listQuake.classList.add('group-list-item');
+        button.classList.add('btn-success'); 
         showDetails(button, quake);
     }
 
