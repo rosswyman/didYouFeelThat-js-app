@@ -94,7 +94,7 @@ button,
 }
 
 
-#modal-container {
+/* #modal-container {
   display: none;
 }
 
@@ -106,16 +106,16 @@ button,
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); */
   
   /* to show it above other content */
-  z-index: 999; 
+  /* z-index: 999;  */
   
   /* to allow scrolling if the screen is not high enough*/
-  overflow: auto; 
+  /* overflow: auto;  */
   
   /* this is used to center the modal */
-  display: grid;
+  /* display: grid;
   text-align: center;
 
   display: block;
@@ -149,4 +149,4 @@ button,
 
 .modal p {
   margin-bottom: 0;
-}
+} */
