@@ -40,10 +40,7 @@ let quakeRepository=(function(){
     function showDetails(button, quake){
         button.addEventListener('click',function(){
             loadDetails(quake).then(function(){
-                // showDialog(quake.name,'Quake Details',quake);
-                $('#myModal').modal()
-                console.log('launched modal')
-                
+                showDialog(quake.name,'Quake Details',quake);               
             });            
         });
     }
@@ -150,7 +147,8 @@ let quakeRepository=(function(){
   }
 
   function showDialog(title,text,quake){
-    showModal(title, text);
+    // showModal(title, text);
+    $('#myModal').modal()
       
     let modalContainer=document.querySelector('#modal-container');
     let modal = modalContainer.querySelector('.modal');
