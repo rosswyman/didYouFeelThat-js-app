@@ -24,7 +24,7 @@ let quakeRepository=(function(){
 
     // creates an unordered list of earthquakes that the user can click on for details
     function addListItem(quake){
-      
+        console.log('running addListItem')
         let quakeList=document.querySelector('.list-group');
         let listQuake=document.createElement('li');
         let button=document.createElement('button')
@@ -40,7 +40,10 @@ let quakeRepository=(function(){
     function showDetails(button, quake){
         button.addEventListener('click',function(){
             loadDetails(quake).then(function(){
-                showDialog(quake.name,'Quake Details',quake);
+                // showDialog(quake.name,'Quake Details',quake);
+                $('#myModal').modal()
+                console.log('launched modal')
+                
             });            
         });
     }
@@ -238,8 +241,10 @@ let quakeRepository=(function(){
     };
 })();
 
+
 quakeRepository.loadList().then(function() {
     // Now the data is loaded!
+    
     quakeRepository.getAll().forEach(function(quake){
     quakeRepository.addListItem(quake);
     });
