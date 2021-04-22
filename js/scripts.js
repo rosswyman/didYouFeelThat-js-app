@@ -24,7 +24,6 @@ let quakeRepository=(function(){
 
     // creates an unordered list of earthquakes that the user can click on for details
     function addListItem(quake){
-        console.log('running addListItem')
         let quakeList=document.querySelector('.list-group');
         let listQuake=document.createElement('li');
         let button=document.createElement('button')
@@ -32,7 +31,8 @@ let quakeRepository=(function(){
         listQuake.appendChild(button);
         quakeList.appendChild(listQuake);
         listQuake.classList.add('group-list-item');
-        button.classList.add('btn-success'); 
+        button.classList.add('btn');
+        button.classList.add('btn-primary'); 
         showDetails(button, quake);
     }
 
