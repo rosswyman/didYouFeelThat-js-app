@@ -46,19 +46,15 @@ h2{
   text-align: center; 
 }
 
-
+li{
+  margin: 5px;
+  }
 /* Grid Styling */
 
 /* Link Styling */
 
 /* Button Styling */
-button,
-.button{
-  background-color: #8893B1;
-  border: 3px solid black;
-  padding: 10px;
-  border-radius: 10px;
-}
+
 /* div Class Styling */
 
 /* img Class Styling */
