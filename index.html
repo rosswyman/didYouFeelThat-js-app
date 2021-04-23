@@ -49,6 +49,36 @@
         </header>
 
         <main>
+            <h2>Please fill in the following fields and we'll see if there have been any earthquakes nearby!</h2>
+            <form>
+                <div class="form-group">
+                    <label for="start-date">Start date</label>
+                    <input type="date" class="form-control" id="input-start-date" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="startDateHelp" class="form-text text-muted">Enter the start of your date range.</small>
+                </div>
+                <div class="form-group">
+                    <label for="end-date">End date</label>
+                    <input type="date" class="form-control" id="input-end-date" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="endDateHelp" class="form-text text-muted">Enter the end of your date range.</small>
+                </div>
+                <div class="form-group">
+                    <label for="center-latitude">Latitude</label>
+                    <input type="number" class="form-control" id="input-center-latitude" placeholder="29.76">
+                    <small id="latitudeHelp" class="form-text text-muted">Enter a value for center latitude of your search, -90 to 90.</small>
+                </div>
+                <div class="form-group">
+                    <label for="center-longitude">Longitude</label>
+                    <input type="number" class="form-control" id="input-center-longitude" placeholder="-95.37">
+                    <small id="longitudeHelp" class="form-text text-muted">Enter a value for center latitude of your search, -180 to 180.</small>
+                </div>
+                <div class="form-group">
+                    <label for="event-radius">Radius</label>
+                    <input type="number" class="form-control" id="inuput-event-radius" placeholder="1000">
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+
             <h2>Click on an earthquake event to learn more!</h2>
             <div id="modal-container">
                  <!-- Modal -->
