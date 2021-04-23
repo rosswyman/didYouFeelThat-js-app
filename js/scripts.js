@@ -6,7 +6,7 @@ let quakeRepository=(function(){
 
     //Currently fetches data for 4/01/2021-4/02/2021 UTC time within 1000 km radius of Houston, TX.  Plan to replace this user input for date, center, and radius
     
-    let apiUrl = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&starttime=2021-04-01&endtime=2021-04-02&latitude=29.76&longitude=-95.37&maxradiuskm=1000';
+    // let apiUrl = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&starttime=2021-04-01&endtime=2021-04-02&latitude=29.76&longitude=-95.37&maxradiuskm=1000';
 
     // // adds a new quake to the end of quakeRepository
     function add(quake){
@@ -140,22 +140,27 @@ let quakeRepository=(function(){
     }
 
     function hideLoadingMessage(){
-        // console.clear();
+        console.clear();
     }
     
     function assembleTargetURL(){
-        
-            let startDate=$('#input-start-date').val();
-            let endDate=$('#input-end-date').val();
-            let latitude=$('#input-center-latitude').val();
-            let longitude=$('#input-center-longitude').val();
-            let radius=$('#input-event-radius').val();
-            let assembledTargetURL='https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&starttime='+startDate+'&endtime='+endDate+'&latitude='+latitude+'&longitude='+longitude+'&maxradiuskm='+radius;
-            alert(assembledTargetURL);
-            
-            // alert(startDate+endDate+latitude+longitude+radius);
-        
-        console.log(assembledTargetURL)
+        // Gather user input to create the USGS search string
+        let startDate=$('#input-start-date').val();
+        let endDate=$('#input-end-date').val();
+        let latitude=$('#input-center-latitude').val();
+        let longitude=$('#input-center-longitude').val();
+        let radius=$('#input-event-radius').val();
+        let assembledTargetURL='https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&starttime='+startDate+'&endtime='+endDate+'&latitude='+latitude+'&longitude='+longitude+'&maxradiuskm='+radius;
+        // Assign to target variable for function loadList
+        apiUrl=assembledTargetURL;
+
+        // Call load
+        loadList().then(function() {
+            // Now the data is loaded!
+            getAll().forEach(function(quake){
+                addListItem(quake);
+            })
+        })
     }
 
     return{
@@ -170,12 +175,3 @@ let quakeRepository=(function(){
         assembleTargetURL: assembleTargetURL
     };
 })();
-
-
-quakeRepository.loadList().then(function() {
-    // Now the data is loaded!
-    
-    quakeRepository.getAll().forEach(function(quake){
-    quakeRepository.addListItem(quake);
-    });
-  });
