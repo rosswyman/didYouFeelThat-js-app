@@ -32,7 +32,9 @@ let quakeRepository=(function(){
         quakeList.appendChild(listQuake);
         listQuake.classList.add('group-list-item');
         button.classList.add('btn');
-        button.classList.add('btn-primary'); 
+        button.classList.add('btn-primary');
+        button.setAttribute('data-toggle','modal');
+        button.setAttribute('data-target','myModal'); 
         showDetails(button, quake);
     }
 
