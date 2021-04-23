@@ -34,13 +34,15 @@ let quakeRepository=(function(){
         button.classList.add('btn');
         button.classList.add('btn-primary');
         button.setAttribute('data-toggle','modal');
-        button.setAttribute('data-target','myModal'); 
-        showDetails(button, quake);
-    }
+        button.setAttribute('data-target','myModal');
+        button.addEventListener('click', function(){
+            showDetails(quake);
+    });
+}
 
     // Shows the details of an earthquake by calling the showDialog function when the button is pressed
-    function showDetails(button, quake){
-        button.addEventListener('click',function(){
+    function showDetails(quake){
+
             loadDetails(quake).then(function(){
                 // Create an unordered list with details
                 let quakeDetails=document.createElement('ul');
@@ -75,15 +77,11 @@ let quakeRepository=(function(){
                 quakeDetails.appendChild(quakeDetailDepth);
                 $('#body-modal').append(quakeDetailDepth);
 
-                let quakeImage=document.createElement('img');
-                quakeImage.src=quake.imgURL;
-                $('#body-modal').append(quakeImage);       
-
                 $('#myModal').find('.modal-title').text(quake.name);      
                 $('#myModal').modal();               
             });            
-        });
-    }
+        };
+    
 
     // Fetches a list of earthqukes meeting the user criteria from USGS
     function loadList() {
