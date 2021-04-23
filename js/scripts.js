@@ -5,6 +5,7 @@ let quakeRepository=(function(){
     let quakeList = []; 
 
     //Currently fetches data for 4/01/2021-4/02/2021 UTC time within 1000 km radius of Houston, TX.  Plan to replace this user input for date, center, and radius
+    
     let apiUrl = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&starttime=2021-04-01&endtime=2021-04-02&latitude=29.76&longitude=-95.37&maxradiuskm=1000';
 
     // // adds a new quake to the end of quakeRepository
@@ -39,6 +40,8 @@ let quakeRepository=(function(){
             showDetails(quake);
     });
 }
+
+    
 
     // Shows the details of an earthquake by calling the showDialog function when the button is pressed
     function showDetails(quake){
@@ -86,7 +89,7 @@ let quakeRepository=(function(){
     // Fetches a list of earthqukes meeting the user criteria from USGS
     function loadList() {
         showLoadingMessage();
-        return fetch(apiUrl).then(function (response) {
+          return fetch(apiUrl).then(function (response) {
           return response.json();
         }).then(function (json){
             json.features.forEach(function(item){
@@ -137,7 +140,22 @@ let quakeRepository=(function(){
     }
 
     function hideLoadingMessage(){
-        console.clear();
+        // console.clear();
+    }
+    
+    function assembleTargetURL(){
+        
+            let startDate=$('#input-start-date').val();
+            let endDate=$('#input-end-date').val();
+            let latitude=$('#input-center-latitude').val();
+            let longitude=$('#input-center-longitude').val();
+            let radius=$('#input-event-radius').val();
+            let assembledTargetURL='https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&starttime='+startDate+'&endtime='+endDate+'&latitude='+latitude+'&longitude='+longitude+'&maxradiuskm='+radius;
+            alert(assembledTargetURL);
+            
+            // alert(startDate+endDate+latitude+longitude+radius);
+        
+        console.log(assembledTargetURL)
     }
 
     return{
@@ -148,7 +166,8 @@ let quakeRepository=(function(){
         loadList: loadList,
         loadDetails: loadDetails,
         showLoadingMessage: showLoadingMessage,
-        hideLoadingMessage: hideLoadingMessage
+        hideLoadingMessage: hideLoadingMessage,
+        assembleTargetURL: assembleTargetURL
     };
 })();
 
