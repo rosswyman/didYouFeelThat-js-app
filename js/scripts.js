@@ -4,10 +4,6 @@ let quakeRepository=(function(){
     // initial array declartion
     let quakeList = []; 
 
-    //Currently fetches data for 4/01/2021-4/02/2021 UTC time within 1000 km radius of Houston, TX.  Plan to replace this user input for date, center, and radius
-    
-    // let apiUrl = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventtype=earthquake&starttime=2021-04-01&endtime=2021-04-02&latitude=29.76&longitude=-95.37&maxradiuskm=1000';
-
     // // adds a new quake to the end of quakeRepository
     function add(quake){
         // Checks to see if the parameter being passed to the add function is an object
@@ -40,8 +36,6 @@ let quakeRepository=(function(){
             showDetails(quake);
     });
 }
-
-    
 
     // Shows the details of an earthquake by calling the showDialog function when the button is pressed
     function showDetails(quake){
@@ -121,7 +115,6 @@ let quakeRepository=(function(){
         return fetch(url).then(function(response){
             return response.json();
         }).then(function (item) {
-            // quake.imgURL=item.properties.products.dyfi["contents.nm60331242_ciim.jpg"]url;
             quake.imgURL='https://via.placeholder.com/150';
             quake.nonJsonUrl=item.properties.url;
             quake.magnitude=item.properties.mag.toFixed(1);
