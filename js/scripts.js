@@ -50,9 +50,15 @@ let quakeRepository=(function(){
                 $('#myModal').find('.modal-body').text('');
 
                 // Create list items of quake details and add to parent list
+                
                 let quakeDetailURL=document.createElement('li');
-                quakeDetailURL.innerText='Event URL: '+quake.nonJsonUrl;
-                quakeDetails.appendChild(quakeDetailURL);
+                quakeDetailURL.innerText='Event URL: ';
+                var USGSUrl = document.createElement("a");
+                USGSUrl.textContent = quake.nonJsonUrl;
+                USGSUrl.setAttribute('href', quake.nonJsonUrl);
+                USGSUrl.setAttribute('target','_blank')
+                quakeDetailURL.appendChild(USGSUrl);
+                quakeDetails.appendChild(quakeDetailURL);           
                 $('#body-modal').append(quakeDetailURL);
 
                 let quakeDetailMagnitude=document.createElement('li');
