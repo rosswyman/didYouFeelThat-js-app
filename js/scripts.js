@@ -116,7 +116,6 @@ let quakeRepository=(function(){
         return fetch(url).then(function(response){
             return response.json();
         }).then(function (item) {
-            quake.imgURL='https://via.placeholder.com/150';
             quake.nonJsonUrl=item.properties.url;
             quake.magnitude=item.properties.mag.toFixed(1);
             quake.latitude=item.geometry.coordinates[0].toFixed(4);
