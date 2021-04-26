@@ -12,7 +12,6 @@ header {
   display: inline-block;
   background-color: var(--background-color);
   font-family: 'IBM Plex Serif', serif;
-  /* font-size: 16px; */
   line-height: 1.6;
   text-align: center;
 }
@@ -20,12 +19,10 @@ header {
 .page-header {
   clear: both;
   display: inline-block;
-  /* font-weight: bold; */
 }
 
 /* Body Styling */
 body{
-  /* background-color: #639C97; */
   background-color: #B1A688;
   padding: 25px;
 }
@@ -54,7 +51,11 @@ li{
 /* Form Styling */
 .form-group{
   font-family: 'IBM Plex Serif', serif;
-}  
+}
+
+.text-muted{
+  color: #31373e !important;
+}
 /* Grid Styling */
 
 /* Link Styling */
