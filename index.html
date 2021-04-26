@@ -17,6 +17,7 @@
     </head>
 
     <body>
+      <div class="container">
 
         <header class="page-header">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -75,8 +76,11 @@
                     <label for="event-radius">Radius</label>
                     <input type="number" class="form-control" id="input-event-radius" placeholder="1000">
                 </div>
+                <div class="text-center">
+                  <button type="button" class="btn btn-primary" id="button-search" onclick="quakeRepository.assembleTargetURL();">Search</button>
+                </div>
                
-                <button type="button" class="btn btn-primary" id="button-search" onclick="quakeRepository.assembleTargetURL();">Search</button>
+                
               </form>
 
             <h2>Click on an earthquake event to learn more!</h2>
@@ -120,7 +124,7 @@
             </strong>
             
         </main>
-        
+      </div>
     </body>
 
 </html>
