@@ -83,27 +83,3 @@ li{
 /* Table Styling */
 
 /* Responsive Design */
-@media all and (max-width: 750px) {
-   h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-}
-
-@media all and (min-width: 500px) and (max-width: 750px) {
-  h1{
-    font-size: 20px;
-  }
-}
-@media all and (max-width: 500px) {
-    h1 {
-    font-size: 16px;
-  }
-
-  h2 {
-    font-size: 12px;
-  }
-}
