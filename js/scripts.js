@@ -21,20 +21,22 @@ let quakeRepository=(function(){
 
     // creates an unordered list of earthquakes that the user can click on for details
     function addListItem(quake){
-        let quakeList=document.querySelector('.list-group');
-        let listQuake=document.createElement('li');
-        let button=document.createElement('button')
-        button.innerText=quake.name;
-        listQuake.appendChild(button);
-        quakeList.appendChild(listQuake);
-        listQuake.classList.add('group-list-item');
-        button.classList.add('btn');
-        button.classList.add('btn-primary');
-        button.setAttribute('data-toggle','modal');
-        button.setAttribute('data-target','myModal');
-        button.addEventListener('click', function(){
+        let quakeList=$('.list-group');
+        let li=$('<li></li>');
+        
+        eventButton = $('<button />')
+            .addClass('btn btn-primary button-quake')
+            .attr('data-toggle', 'modal')
+            .attr('data-target', 'myModal')
+            .text(quake.name);
+        
+        li.append(eventButton);
+        li.addClass('group-list-item');
+        li.on('click',function(){
             showDetails(quake);
-    });
+        });
+        
+        quakeList.append(li);
 }
 
     // Shows the details of an earthquake by calling the showDialog function when the button is pressed
@@ -49,9 +51,15 @@ let quakeRepository=(function(){
                 $('#myModal').find('.modal-body').text('');
 
                 // Create list items of quake details and add to parent list
+                
                 let quakeDetailURL=document.createElement('li');
-                quakeDetailURL.innerText='Event URL: '+quake.nonJsonUrl;
-                quakeDetails.appendChild(quakeDetailURL);
+                quakeDetailURL.innerText='Event URL: ';
+                var USGSUrl = document.createElement("a");
+                USGSUrl.textContent = quake.nonJsonUrl;
+                USGSUrl.setAttribute('href', quake.nonJsonUrl);
+                USGSUrl.setAttribute('target','_blank')
+                quakeDetailURL.appendChild(USGSUrl);
+                quakeDetails.appendChild(quakeDetailURL);           
                 $('#body-modal').append(quakeDetailURL);
 
                 let quakeDetailMagnitude=document.createElement('li');
@@ -115,7 +123,6 @@ let quakeRepository=(function(){
         return fetch(url).then(function(response){
             return response.json();
         }).then(function (item) {
-            quake.imgURL='https://via.placeholder.com/150';
             quake.nonJsonUrl=item.properties.url;
             quake.magnitude=item.properties.mag.toFixed(1);
             quake.latitude=item.geometry.coordinates[0].toFixed(4);

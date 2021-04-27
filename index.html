@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="img/favicon-32x32.png">
                 
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap" rel="stylesheet"> 
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -17,6 +17,7 @@
     </head>
 
     <body>
+      <div class="container">
 
         <header class="page-header">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -75,8 +76,11 @@
                     <label for="event-radius">Radius</label>
                     <input type="number" class="form-control" id="input-event-radius" placeholder="1000">
                 </div>
+                <div class="text-center">
+                  <button type="button" class="btn btn-primary" id="button-search" onclick="quakeRepository.assembleTargetURL();">Search</button>
+                </div>
                
-                <button type="button" class="btn btn-primary" id="button-search" onclick="quakeRepository.assembleTargetURL();">Search</button>
+                
               </form>
 
             <h2>Click on an earthquake event to learn more!</h2>
@@ -95,8 +99,7 @@
                             ...
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -121,7 +124,7 @@
             </strong>
             
         </main>
-        
+      </div>
     </body>
 
 </html>

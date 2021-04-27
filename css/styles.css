@@ -11,8 +11,7 @@
 header {
   display: inline-block;
   background-color: var(--background-color);
-  font-family: 'Nunito', sans-serif;
-  /* font-size: 16px; */
+  font-family: 'IBM Plex Serif', serif;
   line-height: 1.6;
   text-align: center;
 }
@@ -20,18 +19,16 @@ header {
 .page-header {
   clear: both;
   display: inline-block;
-  /* font-weight: bold; */
 }
 
 /* Body Styling */
 body{
-  /* background-color: #639C97; */
   background-color: #B1A688;
   padding: 25px;
 }
 
 h1{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'IBM Plex Serif', serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 1.4;
@@ -39,22 +36,42 @@ h1{
 }
 
 h2{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'IBM Plex Serif', serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 1.4;
-  text-align: center; 
+  text-align: 
+  center; 
 }
-
+/* List Styling */
 li{
   margin: 5px;
-  }
+  list-style-type: none;
+  
+}
+
+.list-group{
+  text-align: center;
+}
+
+
+
+/* Form Styling */
+.form-group{
+  font-family: 'IBM Plex Serif', serif;
+}
+
+.text-muted{
+  color: #31373e !important;
+}
 /* Grid Styling */
 
 /* Link Styling */
 
 /* Button Styling */
-
+.button-quake{
+  min-width: 375px;
+}
 /* div Class Styling */
 
 /* img Class Styling */
@@ -64,27 +81,3 @@ li{
 /* Table Styling */
 
 /* Responsive Design */
-@media all and (max-width: 750px) {
-   h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-}
-
-@media all and (min-width: 500px) and (max-width: 750px) {
-  h1{
-    font-size: 20px;
-  }
-}
-@media all and (max-width: 500px) {
-    h1 {
-    font-size: 16px;
-  }
-
-  h2 {
-    font-size: 12px;
-  }
-}
