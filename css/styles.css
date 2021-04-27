@@ -81,3 +81,13 @@ li{
 /* Table Styling */
 
 /* Responsive Design */
+@media (max-width: 400px){
+  .button-quake{
+    min-width: 300px;
+  }
+}
+
+/* Modal Styling */
+.modal-dialog{
+  word-wrap: break-word;
+}
