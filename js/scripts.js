@@ -21,21 +21,22 @@ let quakeRepository=(function(){
 
     // creates an unordered list of earthquakes that the user can click on for details
     function addListItem(quake){
-        let quakeList=document.querySelector('.list-group');
-        let listQuake=document.createElement('li');
-        let button=document.createElement('button')
-        button.innerText=quake.name;
-        listQuake.appendChild(button);
-        quakeList.appendChild(listQuake);
-        listQuake.classList.add('group-list-item');
-        button.classList.add('btn');
-        button.classList.add('btn-primary');
-        button.classList.add('button-quake');
-        button.setAttribute('data-toggle','modal');
-        button.setAttribute('data-target','myModal');
-        button.addEventListener('click', function(){
+        let quakeList=$('.list-group');
+        let li=$('<li></li>');
+        
+        eventButton = $('<button />')
+            .addClass('btn btn-primary button-quake')
+            .attr('data-toggle', 'modal')
+            .attr('data-target', 'myModal')
+            .text(quake.name);
+        
+        li.append(eventButton);
+        li.addClass('group-list-item');
+        li.on('click',function(){
             showDetails(quake);
-    });
+        });
+        
+        quakeList.append(li);
 }
 
     // Shows the details of an earthquake by calling the showDialog function when the button is pressed
