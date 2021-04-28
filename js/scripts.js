@@ -204,42 +204,30 @@ let validateInput = (function () {
 	let form = document.querySelector('#user-input');
 
 	function validateStartDate() {
-		console.log('validateStartDate called');
-
 		let sDate = new Date(startDateInput.value);
 		let eDate = new Date(endDateInput.value);
 
-		console.log('Start date is ' + sDate);
-		console.log('End date is ' + eDate);
-
 		if (sDate > eDate) {
 			showErrorMessage(startDateInput, 'Start date must be before end date');
-			console.log('Start date is invalid');
+
 			return false;
 		}
 
 		showErrorMessage(startDateInput, null);
-		console.log('Start date is valid');
+
 		return true;
 	}
 
 	function validateEndDate() {
-		console.log('validateEndDate called');
-
 		let today = new Date();
 		let eDate = new Date(endDateInput.value);
 
-		console.log('today is ' + today);
-		console.log('End date is ' + eDate);
-
 		if (eDate > today) {
 			showErrorMessage(endDateInput, 'End date cannot be later than today.');
-			console.log('End date is invalid');
 			return false;
 		}
 
 		showErrorMessage(endDateInput, null);
-		console.log('End date is valid.');
 		return true;
 	}
 
@@ -269,8 +257,6 @@ let validateInput = (function () {
 	}
 
 	function validateRadius() {
-		console.log('validateRadius called');
-
 		let value = radiusInput.value;
 
 		if (!value) {
@@ -278,14 +264,11 @@ let validateInput = (function () {
 		}
 		if (value <= 0) {
 			showErrorMessage(radiusInput, 'Radius must be a positive number');
-			console.log('Radius is invalid');
 			return false;
 		}
 
 		showErrorMessage(radiusInput, null);
-		console.log('Radius is valid');
 		return true;
-		// return value && isPositive;
 	}
 
 	function validateForm() {
