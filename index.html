@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap" rel="stylesheet"> 
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="dist/minfycss.css">
     
     </head>
 
@@ -51,7 +51,7 @@
 
         <main>
             <h2>Please fill in the following fields and we'll see if there have been any earthquakes nearby!</h2>
-            <form>
+            <form id="user-input">
                 <div class="form-group">
                     <label for="start-date">Start date</label>
                     <input type="date" class="form-control" id="input-start-date" aria-describedby="startDateHelp">
@@ -64,12 +64,12 @@
                 </div>
                 <div class="form-group">
                     <label for="center-latitude">Latitude</label>
-                    <input type="number" class="form-control" id="input-center-latitude" placeholder="29.76">
+                    <input type="number" class="form-control" id="input-center-latitude" placeholder="29.76" min="-90" max="90">
                     <small id="latitudeHelp" class="form-text text-muted">Enter a value for center latitude of your search, -90 to 90.</small>
                 </div>
                 <div class="form-group">
                     <label for="center-longitude">Longitude</label>
-                    <input type="number" class="form-control" id="input-center-longitude" placeholder="-95.37">
+                    <input type="number" class="form-control" id="input-center-longitude" placeholder="-95.37" min="-180" max="180">
                     <small id="longitudeHelp" class="form-text text-muted">Enter a value for center latitude of your search, -180 to 180.</small>
                 </div>
                 <div class="form-group">
@@ -77,7 +77,7 @@
                     <input type="number" class="form-control" id="input-event-radius" placeholder="1000">
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary" id="button-search" onclick="quakeRepository.assembleTargetURL();">Search</button>
+                  <button type="button" class="btn btn-primary" id="button-search" onclick="validateInput.runSearch();">Search</button>
                 </div>
                
                 
@@ -111,7 +111,7 @@
                 <strong>
                 <script src="js/promise-polyfill.js"></script>
                 <script src="js/fetch-polyfill.js"></script>
-                <script src="js/scripts.js"></script>
+                <script src="dist/minifyjs.js"></script>
                 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
                         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                         crossorigin="anonymous"></script>

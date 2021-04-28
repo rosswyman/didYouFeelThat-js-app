@@ -1,12 +1,6 @@
-/* Universal Styling */
 * {
 	box-sizing: border-box;
 }
-
-/* Native CSS Variables */
-
-/* Header Styling */
-
 header {
 	display: inline-block;
 	background-color: var(--background-color);
@@ -14,18 +8,14 @@ header {
 	line-height: 1.6;
 	text-align: center;
 }
-
 .page-header {
 	clear: both;
 	display: inline-block;
 }
-
-/* Body Styling */
 body {
 	background-color: #b1a688;
 	padding: 25px;
 }
-
 h1 {
 	font-family: 'IBM Plex Serif', serif;
 	font-weight: 400;
@@ -33,7 +23,6 @@ h1 {
 	line-height: 1.4;
 	text-align: center;
 }
-
 h2 {
 	font-family: 'IBM Plex Serif', serif;
 	font-weight: 400;
@@ -41,58 +30,32 @@ h2 {
 	line-height: 1.4;
 	text-align: center;
 }
-
-/* List Styling */
-
 li {
 	margin: 5px;
 	list-style-type: none;
 }
-
 .list-group {
 	text-align: center;
 }
-
-/* Form Styling */
 .form-group {
 	font-family: 'IBM Plex Serif', serif;
 }
-
 .text-muted {
 	color: #31373e !important;
 }
-
-/* Grid Styling */
-
-/* Link Styling */
-
-/* Button Styling */
-
 .button-quake {
 	min-width: 375px;
 }
-
-/* div Class Styling */
-
 .error-message {
 	background-color: red;
-	color: black;
+	color: #000;
 	font-style: italic;
 }
-/* img Class Styling */
-
-/* Footer Styling */
-
-/* Table Styling */
-
-/* Responsive Design */
 @media (max-width: 400px) {
 	.button-quake {
 		min-width: 300px;
 	}
 }
-
-/* Modal Styling */
 .modal-dialog {
 	word-wrap: break-word;
 }
