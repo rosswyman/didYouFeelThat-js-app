@@ -1,6 +1,6 @@
 /* Universal Styling */
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* Native CSS Variables */
@@ -8,58 +8,58 @@
 /* Header Styling */
 
 header {
-  display: inline-block;
-  background-color: var(--background-color);
-  font-family: 'IBM Plex Serif', serif;
-  line-height: 1.6;
-  text-align: center;
+	display: inline-block;
+	background-color: var(--background-color);
+	font-family: 'IBM Plex Serif', serif;
+	line-height: 1.6;
+	text-align: center;
 }
 
 .page-header {
-  clear: both;
-  display: inline-block;
+	clear: both;
+	display: inline-block;
 }
 
 /* Body Styling */
 body {
-  background-color: #b1a688;
-  padding: 25px;
+	background-color: #b1a688;
+	padding: 25px;
 }
 
 h1 {
-  font-family: 'IBM Plex Serif', serif;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 1.4;
-  text-align: center;
+	font-family: 'IBM Plex Serif', serif;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 1.4;
+	text-align: center;
 }
 
 h2 {
-  font-family: 'IBM Plex Serif', serif;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 1.4;
-  text-align: center;
+	font-family: 'IBM Plex Serif', serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 1.4;
+	text-align: center;
 }
 
 /* List Styling */
 
 li {
-  margin: 5px;
-  list-style-type: none;
+	margin: 5px;
+	list-style-type: none;
 }
 
 .list-group {
-  text-align: center;
+	text-align: center;
 }
 
 /* Form Styling */
 .form-group {
-  font-family: 'IBM Plex Serif', serif;
+	font-family: 'IBM Plex Serif', serif;
 }
 
 .text-muted {
-  color: #31373e !important;
+	color: #31373e !important;
 }
 
 /* Grid Styling */
@@ -69,11 +69,16 @@ li {
 /* Button Styling */
 
 .button-quake {
-  min-width: 375px;
+	min-width: 375px;
 }
 
 /* div Class Styling */
 
+.error-message {
+	background-color: red;
+	color: black;
+	font-style: italic;
+}
 /* img Class Styling */
 
 /* Footer Styling */
@@ -82,12 +87,12 @@ li {
 
 /* Responsive Design */
 @media (max-width: 400px) {
-  .button-quake {
-    min-width: 300px;
-  }
+	.button-quake {
+		min-width: 300px;
+	}
 }
 
 /* Modal Styling */
 .modal-dialog {
-  word-wrap: break-word;
+	word-wrap: break-word;
 }
