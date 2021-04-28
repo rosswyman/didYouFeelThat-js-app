@@ -14,11 +14,12 @@ let quakeRepository=(function(){
             }
         }
 
-    // returns the list of resorts
+    // returns the list of earthquakes
     function getAll(){
         return quakeList;
     }
 
+   
     // creates an unordered list of earthquakes that the user can click on for details
     function addListItem(quake){
         let quakeList=$('.list-group');
@@ -100,7 +101,6 @@ let quakeRepository=(function(){
                     name: item.properties.title,
                     detailURL: item.properties.detail,
                     // The following fields that will be populated from detailURL
-                    imgURL: null,
                     nonJsonUrl: null,
                     magnitude: null,
                     latitude: null,
