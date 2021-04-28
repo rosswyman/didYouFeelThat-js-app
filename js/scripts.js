@@ -170,13 +170,16 @@ let quakeRepository = (function () {
 		// Assign to target variable for function loadList
 		apiUrl = assembledTargetURL;
 
-		// Call load
-		loadList().then(function () {
-			// Now the data is loaded!
-			getAll().forEach(function (quake) {
-				addListItem(quake);
+		if (validateInput.validateForm()) {
+			loadList().then(function () {
+				// Now the data is loaded!
+				getAll().forEach(function (quake) {
+					addListItem(quake);
+				});
 			});
-		});
+		} else {
+			alert('You have an error');
+		}
 	}
 
 	return {
@@ -285,6 +288,21 @@ let validateInput = (function () {
 		// return value && isPositive;
 	}
 
+	function validateForm() {
+		let isValidStartDate = validateStartDate();
+		let isValidEndDate = validateEndDate();
+		let isValidLatitude = validateLatitude();
+		let isValidLongitude = validateLongitude();
+		let isValidRadius = validateRadius();
+		return (
+			isValidStartDate &&
+			isValidEndDate &&
+			isValidLatitude &&
+			isValidLongitude &&
+			isValidRadius
+		);
+	}
+
 	function showErrorMessage(input, message) {
 		let container = input.parentElement; // The .input-wrapper
 
@@ -308,4 +326,8 @@ let validateInput = (function () {
 	latitudeInput.addEventListener('input', validateLatitude);
 	longitudeInput.addEventListener('input', validateLongitude);
 	radiusInput.addEventListener('input', validateRadius);
+
+	return {
+		validateForm: validateForm,
+	};
 })();
