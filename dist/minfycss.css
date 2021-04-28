@@ -1,0 +1,61 @@
+* {
+	box-sizing: border-box;
+}
+header {
+	display: inline-block;
+	background-color: var(--background-color);
+	font-family: 'IBM Plex Serif', serif;
+	line-height: 1.6;
+	text-align: center;
+}
+.page-header {
+	clear: both;
+	display: inline-block;
+}
+body {
+	background-color: #b1a688;
+	padding: 25px;
+}
+h1 {
+	font-family: 'IBM Plex Serif', serif;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 1.4;
+	text-align: center;
+}
+h2 {
+	font-family: 'IBM Plex Serif', serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 1.4;
+	text-align: center;
+}
+li {
+	margin: 5px;
+	list-style-type: none;
+}
+.list-group {
+	text-align: center;
+}
+.form-group {
+	font-family: 'IBM Plex Serif', serif;
+}
+.text-muted {
+	color: #31373e !important;
+}
+.button-quake {
+	min-width: 375px;
+}
+.error-message {
+	background-color: red;
+	color: #000;
+	font-style: italic;
+}
+@media (max-width: 400px) {
+	.button-quake {
+		min-width: 300px;
+	}
+}
+.modal-dialog {
+	word-wrap: break-word;
+}
