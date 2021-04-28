@@ -169,17 +169,7 @@ let quakeRepository = (function () {
 			radius;
 		// Assign to target variable for function loadList
 		apiUrl = assembledTargetURL;
-
-		if (validateInput.validateForm()) {
-			loadList().then(function () {
-				// Now the data is loaded!
-				getAll().forEach(function (quake) {
-					addListItem(quake);
-				});
-			});
-		} else {
-			alert('You have an error');
-		}
+		return apiUrl;
 	}
 
 	return {
@@ -277,6 +267,7 @@ let validateInput = (function () {
 		let isValidLatitude = validateLatitude();
 		let isValidLongitude = validateLongitude();
 		let isValidRadius = validateRadius();
+
 		return (
 			isValidStartDate &&
 			isValidEndDate &&
@@ -284,6 +275,20 @@ let validateInput = (function () {
 			isValidLongitude &&
 			isValidRadius
 		);
+	}
+
+	function runSearch() {
+		if (validateForm()) {
+			quakeRepository.assembleTargetURL();
+			quakeRepository.loadList().then(function () {
+				// Now the data is loaded!
+				quakeRepository.getAll().forEach(function (quake) {
+					quakeRepository.addListItem(quake);
+				});
+			});
+		} else {
+			alert('You have an error');
+		}
 	}
 
 	function showErrorMessage(input, message) {
@@ -312,5 +317,6 @@ let validateInput = (function () {
 
 	return {
 		validateForm: validateForm,
+		runSearch: runSearch,
 	};
 })();
